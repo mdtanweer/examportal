@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper mt-20 mb-20">
+  <div class="conatiner">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> Read the instructions carefully </mat-card-title>
+            <mat-card-subtitle> One step more to go </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="ml-20" *ngIf="quiz">
+            <h2>{{ quiz.title }}</h2>
+            <p>{{ quiz.description }}</p>
+            <mat-divider></mat-divider>
+            <h2 class="mt-10">Important Instructions</h2>
+            <ul>
+                <li>This quiz is for practice purpose only.</li>
+                <li>You have to submit the quiz within <b>{{quiz.noOfQuestions * 2}} Minutes.</b></li>
+                <li>You can attempt quiz any no of times</li>
+                <li>There are <b>{{quiz.noOfQuestions}} questions </b>in the quiz</li>
+                <li>Maximum marks obtained in the quiz is <b>{{quiz.maxMarks}}</b></li>
+                <li>Each questions carries <b>{{quiz.maxMarks/quiz.noOfQuestions}} marks</b>. No negative marking for wrong one.</li>
+                <li>All Questions of MCQ type</li>
+            </ul>
+            <mat-divider></mat-divider>
+            <h1 class="mt-10">Attempting Quiz</h1>
+            <ul>
+                <li>Click <b>Start Quiz</b> button to start the quiz.</li>
+                <li>Th time will start the moment you click the Start Quiz button.</li>
+                <li>You can not resume this quiz, if intrrupted due to any reason.</li>
+                <li>Scroll down to move to next question.</li>
+                <li>Click on <b>Submit Quiz</b> button on completion of the quiz.</li>
+                <li>Report of the quiz is automatically generated in the form of PDF copy</li>
+            </ul>
+        </mat-card-content>
+
+          <mat-card-actions class="text-center"> 
+            <button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

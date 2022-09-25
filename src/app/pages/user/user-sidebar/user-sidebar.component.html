@@ -1,0 +1,22 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <h1 class="mt-20">Available Categories</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-action-list>
+            <button mat-list-item routerLink="/user/category/0">
+              <mat-icon mat-list-icon>quiz</mat-icon>
+              All Quizzes
+            </button>
+            <button mat-list-item *ngFor="let cat of categories" [routerLink]="'/user/category/'+cat.id">
+              <mat-icon mat-list-icon>quiz</mat-icon>
+              {{cat.title}}
+            </button>
+          </mat-action-list>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+  

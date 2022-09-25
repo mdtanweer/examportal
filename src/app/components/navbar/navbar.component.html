@@ -1,0 +1,16 @@
+<mat-toolbar color="accent">
+  <button routerLink="/" mat-icon-button>
+    <mat-icon>menu_book</mat-icon>
+  </button>
+  <span>Exam Portal</span>
+  <span class="example-spacer"></span>
+  <div *ngIf="!isLoggedIn">
+    <a routerLink="/login" mat-icon-button> Login </a>
+    <a routerLink="/signup" mat-icon-button class="mr-20 ml-20"> Register </a>
+  </div>
+  <div *ngIf="isLoggedIn">
+    <a *ngIf="login.getRole()=='ROLE_ADMIN'" mat-icon-button class="mr-20" routerLink="/admin/profile"> {{ user.username }} </a>
+    <a *ngIf="login.getRole()=='ROLE_NORMAL'" mat-icon-button class="mr-20" routerLink="/user"> {{ user.username }} </a>
+    <a (click)="logout()" mat-icon-button class="ml-20 mr-20"> Logout </a>
+  </div>
+</mat-toolbar>

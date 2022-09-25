@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "exam-frontend": {
+    "exam-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/exam-frontend",
+            "outputPath": "dist/exam-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "./node_modules/bootstrap-grid-only-css/dist/css/bootstrap-grid.min.css"
             ],
             "scripts": []
           },
@@ -69,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "exam-frontend:build:production"
+              "browserTarget": "exam-front:build:production"
             },
             "development": {
-              "browserTarget": "exam-frontend:build:development"
+              "browserTarget": "exam-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "exam-frontend:build"
+            "browserTarget": "exam-front:build"
           }
         },
         "test": {
@@ -96,6 +98,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8a7c6046-d13d-4b72-99b6-ee8c99e85f4e"
   }
 }

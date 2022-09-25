@@ -1,0 +1,48 @@
+<h1 class="mt-20">Questions of {{ qTitle }}</h1>
+
+<div class="bootstrap-wrapper mb-20y">
+    <div class="container-fluid">
+        <div class="container text-center">
+            <button mat-raised-button color="primary" [routerLink]="'/admin/add-question/'+qId+'/'+qTitle">Add Question</button>
+        </div>
+        <mat-card *ngFor="let q of questions; let i=index" class="mt-20">
+            <mat-card-content>
+                <p>
+                    <b>Q {{i+1}})</b> <span class="ml-20" [innerHtml]="q.content"></span>
+                </p>
+                <div class="container-fluid mt-20">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <b>1)</b> <span class="ml-20">{{q.option1}}</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <b>2)</b> <span class="ml-20">{{q.option2}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <b>3)</b> <span class="ml-20">{{q.option3}}</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <b>4)</b> <span class="ml-20">{{q.option4}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <p class="mt-20"><b>Correct Answer: </b> <span class="ml-10">{{q.answer}}</span></p>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="warn" (click)="deleteQuestion(q.id)">Delete</button>
+                <button mat-button color="primary">Update</button>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
